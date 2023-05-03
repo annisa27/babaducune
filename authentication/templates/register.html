@@ -11,167 +11,171 @@
 <main>
     <!-- P<main>
     <!-- Pills navs -->
-    <div class="d-flex my-auto mx-auto justify-content-center align-items-center">
-        <div class="col-md-4 p-5 shadow-sm border rounded-5 border-primary">
-            <h1 class="text-center mb-4 text-primary">Register</h1>
-            <div class="mb-5">
-                <nav class="nav nav-pills flex-column flex-sm-row" id="nav-member">
-                    <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page"
-                        href="#form-atlet">Atlet</a>
-                    <a class="flex-sm-fill text-sm-center nav-link" href="#form-pelatih">Pelatih</a>
-                    <a class="flex-sm-fill text-sm-center nav-link" href="#form-umpire">Umpire</a>
-                </nav>
+  
+
+        <div class="d-flex vh-80 mx-auto justify-content-center align-items-center">
+            <div class="col-md-4 p-5 shadow-sm border rounded-5 border-primary">
+                <h1 class="text-center mb-4 text-primary">Register</h1>
+                <div class="mb-5">
+                    <nav class="nav nav-pills flex-column flex-sm-row" id="nav-member">
+                        <a class="flex-sm-fill text-sm-center nav-link current" aria-current="page"
+                            href="#form-atlet">Atlet</a>
+                        <a class="flex-sm-fill text-sm-center nav-link" href="#form-pelatih">Pelatih</a>
+                        <a class="flex-sm-fill text-sm-center nav-link" href="#form-umpire">Umpire</a>
+                    </nav>
+                </div>
+
+                <!-- FORM ATLET -->
+                <form id="form-atlet">
+                    <div class="mb-3">
+                        <label for="inputNama" class="form-label">Nama</label>
+                        <input type="name" class="form-control border border-primary" id="inputNama"
+                            aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control border border-primary" id="inputEmail">
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputNegara" class="form-label">Negara</label>
+                        <input class="form-control border border-primary" id="inputNegara">
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputTTL" class="form-label">Tanggal Lahir</label>
+                        <input type="date" class="form-control border border-primary" id="inputTTL">
+                    </div>
+                    <div class="mb-3">
+                        <p class="form-label">Play</p>
+                        <div class="row">
+                            <div class="col">
+                                <input class="form-check-input border border-primary" type="radio"
+                                    name="flexRadioDefault" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Right
+                                </label>
+                            </div>
+                            <div class="col">
+                                <input class="form-check-input border border-primary" type="radio"
+                                    name="flexRadioDefault" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Left
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputTinggi" class="form-label">Tinggi Badan</label>
+                        <input type="number" class="form-control border border-primary" id="inputTinggi">
+                    </div>
+                    <div class="mb-3">
+                        <p class="form-label">Jenis Kelamin</p>
+
+                        <select class="form-control border border-primary form-select"
+                            aria-label="Default select example">
+                            <option selected>Pilih</option>
+                            <option value="1">Laki-laki</option>
+                            <option value="2">Perempuan</option>
+
+                        </select>
+                    </div>
+                    <div class="d-grid mt-5">
+                        <button class="btn btn-primary" type="submit">Daftar</button>
+                    </div>
+                </form>
+
+                <!-- FORM PELATIH -->
+                <form id="form-pelatih">
+                    <div class="mb-3">
+                        <label for="inputNama" class="form-label">Nama</label>
+                        <input type="name" class="form-control border border-primary" id="inputNama"
+                            aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control border border-primary" id="inputEmail">
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputNegara" class="form-label">Negara</label>
+                        <input class="form-control border border-primary" id="inputNegara">
+                    </div>
+                    <div class="mb-3">
+                        <p class="form-label">Kategori</p>
+                        <div class="container px-0">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input border border-primary" type="checkbox" value=""
+                                            id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Tunggal putra
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input border border-primary" type="checkbox" value=""
+                                            id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Tunggal putri
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input border border-primary" type="checkbox" value=""
+                                            id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Ganda Putra
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input border border-primary" type="checkbox" value=""
+                                            id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Ganda Putri
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputTglMulai" class="form-label">Tanggal Mulai</label>
+                        <input type="date" class="form-control border border-primary" id="inputTglMulai">
+                    </div>
+                    <div class="d-grid mt-5">
+                        <button class="btn btn-primary" type="submit">Daftar</button>
+                    </div>
+                </form>
+
+                <!-- FORM UMPIRE -->
+                <form id="form-umpire">
+                    <div class="mb-3">
+                        <label for="inputNama" class="form-label">Nama</label>
+                        <input type="name" class="form-control border border-primary" id="inputNama"
+                            aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control border border-primary" id="inputEmail">
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputNegara" class="form-label">Negara</label>
+                        <input class="form-control border border-primary" id="inputNegara">
+                    </div>
+                    <div class="d-grid mt-5">
+                        <button class="btn btn-primary" type="submit">Daftar</button>
+                    </div>
+                </form>
             </div>
-
-            <!-- FORM ATLET -->
-            <form id="form-atlet">
-                <div class="mb-3">
-                    <label for="inputNama" class="form-label">Nama</label>
-                    <input type="name" class="form-control border border-primary" id="inputNama"
-                        aria-describedby="emailHelp">
-                </div>
-                <div class="mb-3">
-                    <label for="inputEmail" class="form-label">Email</label>
-                    <input type="email" class="form-control border border-primary" id="inputEmail">
-                </div>
-                <div class="mb-3">
-                    <label for="inputNegara" class="form-label">Negara</label>
-                    <input class="form-control border border-primary" id="inputNegara">
-                </div>
-                <div class="mb-3">
-                    <label for="inputTTL" class="form-label">Tanggal Lahir</label>
-                    <input type="date" class="form-control border border-primary" id="inputTTL">
-                </div>
-                <div class="mb-3">
-                    <p class="form-label">Play</p>
-                    <div class="row">
-                        <div class="col">
-                            <input class="form-check-input border border-primary" type="radio" name="flexRadioDefault"
-                                id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                Right
-                            </label>
-                        </div>
-                        <div class="col">
-                            <input class="form-check-input border border-primary" type="radio" name="flexRadioDefault"
-                                id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                Left
-                            </label>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="mb-3">
-                    <label for="inputTinggi" class="form-label">Tinggi Badan</label>
-                    <input type="number" class="form-control border border-primary" id="inputTinggi">
-                </div>
-                <div class="mb-3">
-                    <p class="form-label">Jenis Kelamin</p>
-
-                    <select class="form-control border border-primary form-select" aria-label="Default select example">
-                        <option selected>Pilih</option>
-                        <option value="1">Laki-laki</option>
-                        <option value="2">Perempuan</option>
-
-                    </select>
-                </div>
-                <div class="d-grid mt-5">
-                    <button class="btn btn-primary" type="submit">Daftar</button>
-                </div>
-            </form>
-
-            <!-- FORM PELATIH -->
-            <form id="form-pelatih">
-                <div class="mb-3">
-                    <label for="inputNama" class="form-label">Nama</label>
-                    <input type="name" class="form-control border border-primary" id="inputNama"
-                        aria-describedby="emailHelp">
-                </div>
-                <div class="mb-3">
-                    <label for="inputEmail" class="form-label">Email</label>
-                    <input type="email" class="form-control border border-primary" id="inputEmail">
-                </div>
-                <div class="mb-3">
-                    <label for="inputNegara" class="form-label">Negara</label>
-                    <input class="form-control border border-primary" id="inputNegara">
-                </div>
-                <div class="mb-3">
-                    <p class="form-label">Kategori</p>
-                    <div class="container px-0">
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-check">
-                                    <input class="form-check-input border border-primary" type="checkbox" value=""
-                                        id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        Tunggal putra
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-check">
-                                    <input class="form-check-input border border-primary" type="checkbox" value=""
-                                        id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        Tunggal putri
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-check">
-                                    <input class="form-check-input border border-primary" type="checkbox" value=""
-                                        id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        Ganda Putra
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-check">
-                                    <input class="form-check-input border border-primary" type="checkbox" value=""
-                                        id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        Ganda Putri
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="mb-3">
-                    <label for="inputTglMulai" class="form-label">Tanggal Mulai</label>
-                    <input type="date" class="form-control border border-primary" id="inputTglMulai">
-                </div>
-                <div class="d-grid mt-5">
-                    <button class="btn btn-primary" type="submit">Daftar</button>
-                </div>
-            </form>
-
-            <!-- FORM UMPIRE -->
-            <form id="form-umpire">
-                <div class="mb-3">
-                    <label for="inputNama" class="form-label">Nama</label>
-                    <input type="name" class="form-control border border-primary" id="inputNama"
-                        aria-describedby="emailHelp">
-                </div>
-                <div class="mb-3">
-                    <label for="inputEmail" class="form-label">Email</label>
-                    <input type="email" class="form-control border border-primary" id="inputEmail">
-                </div>
-                <div class="mb-3">
-                    <label for="inputNegara" class="form-label">Negara</label>
-                    <input class="form-control border border-primary" id="inputNegara">
-                </div>
-                <div class="d-grid mt-5">
-                    <button class="btn btn-primary" type="submit">Daftar</button>
-                </div>
-            </form>
         </div>
-    </div>
+
     <!-- Pills content -->
 </main>
 
@@ -185,9 +189,9 @@
     // Loop through the buttons and add the active class to the current/clicked button
     for (var i = 0; i < btns.length; i++) {
         btns[i].addEventListener("click", function () {
-            var current = document.getElementsByClassName("active");
-            current[0].className = current[0].className.replace("active", "");
-            this.className += " active";
+            var current = document.getElementsByClassName("current");
+            current[0].className = current[0].className.replace("current", "");
+            this.className += " current";
         });
 
     }
@@ -201,10 +205,13 @@
     form:target {
         display: block;
     }
-    .active {
-        background-color: #0d6efd;
-        color: white;
+
+    .current {
+        background: #bfe2e2 !important;
+        background-color: #bfe2e2 !important;
+        color: #3b797f;
     }
+
 </style>
 
 
