@@ -1,0 +1,64 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block meta %}
+<title>BaBaDu | ATLET </title>
+
+{% endblock meta %}
+
+{% block content %}
+
+<main>
+    <!-- P<main>
+    <!-- Pills navs -->
+
+        <div class="d-flex vh-80 mx-auto justify-content-center align-items-center">
+            <div class="col-md-4 p-5 shadow-sm border rounded-5 border-primary">
+                <h1 class="text-center mb-4 text-primary">Daftar Sponsor</h1>
+                
+                <form>
+                    <div class="mb-3">
+                        <label for="inputNama" class="form-label">Nama Sponsor</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Pilih Sponsor</option>
+                            <option value="1">Nike</option>
+                            <option value="2">Adidas</option>
+                            <option value="3">Pepsi</option>
+                          </select>
+                    </div>
+    
+                    <div class="mb-3">
+                        <label for="inputTglMulai" class="form-label">Tanggal Mulai</label>
+                        <input type="date" class="form-control border border-primary" id="inputTglMulai">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="inputTglSelesai" class="form-label">Tanggal Selesai</label>
+                        <input type="date" class="form-control border border-primary" id="inputTglSelesai">
+                    </div>
+                   
+                    <div class="d-grid mt-5">
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+    <!-- Pills content -->
+</main>
+
+
+<style>
+ 
+ .form-select {
+        color: #356369;
+    }
+</style>
+
+
+<!-- Pills navs -->
+
+<!-- Pills content -->
+<!-- </main> -->
+{% endblock content %}

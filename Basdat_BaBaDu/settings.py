@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'authentication',
     'pelatih',
     'umpire',
+    'atlet',
 ]
 
 MIDDLEWARE = [
