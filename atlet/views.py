@@ -18,3 +18,6 @@ def detail_stadium(request):
 
 def detail_event(request):
     return render(request, "detail_event.html")
+
+def dashboard(request):
+    return render(request, "dashboard.html")
