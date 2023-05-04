@@ -8,5 +8,8 @@ def daftar_atlet(request):
 def lihat_atlet(request):
     return render(request, "lihat_atlet.html")
 
+def dashboard(request):
+    return render(request, "dashboard.html")
+
 # def show_register(request):
 #     return render(request, "register.html")

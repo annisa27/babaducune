@@ -10,3 +10,6 @@ def list_event(request):
 
 # def show_register(request):
 #     return render(request, "register.html")
+
+def dashboard(request):
+    return render(request, "dashboard.html")
