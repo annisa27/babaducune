@@ -21,3 +21,6 @@ def detail_event(request):
 
 def dashboard_atlet(request):
     return render(request, "dashboard_atlet.html")
+
+def enrolled_event(request):
+    return render(request, "enrolled_event.html")
