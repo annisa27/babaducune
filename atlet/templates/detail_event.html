@@ -9,53 +9,98 @@
 {% block content %}
 
 <main>
-    <!-- P<main>
+  <!-- P<main>
     <!-- Pills navs -->
 
-   
-    <div class="container m-5">
-        <h1 class="text-center mb-4 text-primary">PILIH KATEGORI</h1>
-        <center>
-            <div class="col-md-4 p-5 shadow-sm border rounded-5 border-primary">
-                <p>Event: Event A</p>
-                <p>Hadiah: Rp 5.000.000</p>
-                <p>Tanggal Mulai: 12-04-2023</p>
-                <p>Tanggal Selesai: 15-04-2023</p>
-                <p>Kategori: S200</p>
-                <p>Kapasitas: 50/64</p>
-                <p>Stadium: GBK</p>
-                <p>Negara Indonesia</p>
-            </div>
-        </center>
-        <div style="margin-top:50px"></div>
-        <table class="table">
+
+  <div class="d-flex my-5 justify-content-center align-items-center">
+    <div class="container-sm mx-5 p-5 shadow-sm border rounded-5 border-primary">
+      <h1 class="text-center mb-5 text-primary">PILIH KATEGORI</h1>
+
+      <div class="container">
+        <div class="row">
+          <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <th scope="col">Event</th>
+                <td>Event A</td>
+                <th scope="col">Kategori</th>
+                <td>S200</td>
+              </tr>
+              <tr>
+                <th scope="col">Hadiah</th>
+                <td>Rp 5.000.000</td>
+                <th scope="col">Kapasitas</th>
+                <td>50/64</td>
+              </tr>
+              <tr>
+                <th scope="col">Tanggal Mulai</th>
+                <td>12-04-2023</td>
+                <th scope="col">Stadium</th>
+                <td>GBK</td>
+              </tr>
+              <tr>
+                <th scope="col">Tanggal Selesai</th>
+                <td>15-04-2023</td>
+                <th scope="col">Negara</th>
+                <td>Indonesia</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="row">
+          <div style="margin-top:50px"></div>
+          <table class="table">
             <thead class="thead-dark">
               <tr>
                 <th scope="col">Kategori</th>
                 <th scope="col">Partner</th>
-                <th scope="col">  </th>
+                <th scope="col"> </th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
+            <tbody class="table-group-divider">
+              <tr >
                 <td>Tunggal Putra</td>
                 <td>-</td>
-                <td><button type="button" class="btn btn-primary">Join</button></td>
+                <td><button class="btn btn-primary" type="submit"><a href="#">Join</a></button></td>
               </tr>
               <tr>
                 <td>Ganda Putra</td>
-                <td>[Dropdown atlet]</td>
-                <td><button type="button" class="btn btn-primary">Join</button></td>
+                <td>
+                  <select class="form-select w-50" aria-label="Default select example" required>
+                    <option selected>Pilih Atlet</option>
+                    <option value="1">Atlet 1</option>
+                    <option value="2">Atlet 2</option>
+                    <option value="3">Atlet 3</option>
+                  </select>
+                </td>
+                <td><button class="btn btn-primary" type="submit"><a href="#">Join</a></button></td>
               </tr>
               <tr>
                 <td>Ganda Campuran</td>
-                <td>[Dropdown atlet]</td>
-                <td><button type="button" class="btn btn-primary">Join</button></td>
+                <td>
+                  <select class="form-select w-50" aria-label="Default select example" required>
+                    <option selected>Pilih Atlet</option>
+                    <option value="1">Atlet 1</option>
+                    <option value="2">Atlet 2</option>
+                    <option value="3">Atlet 3</option>
+                  </select>
+                </td>
+                <td><button class="btn btn-primary" type="submit"><a href="#">Join</a></button></td>
               </tr>
             </tbody>
           </table>
-          
+        </div>
+
+
+
+
+      </div>
     </div>
+
+
+  </div>
+  </div>
 
 </main>
 
