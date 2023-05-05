@@ -19,5 +19,5 @@ def detail_stadium(request):
 def detail_event(request):
     return render(request, "detail_event.html")
 
-def dashboard(request):
-    return render(request, "dashboard.html")
+def dashboard_atlet(request):
+    return render(request, "dashboard_atlet.html")
