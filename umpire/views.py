@@ -13,3 +13,6 @@ def list_event(request):
 
 def dashboard_umpire(request):
     return render(request, "dashboard_umpire.html")
+
+def hasil_pertandingan(request):
+    return render(request, "hasil_pertandingan.html")
