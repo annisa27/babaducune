@@ -20,3 +20,7 @@ def detail_hasil_pertandingan(request):
     return render(request, "detail_hasil_pertandingan.html")
 def pertandingan(request):
     return render(request, "pertandingan.html")
+def form_buat_ujian_kualifikasi(request):
+    return render(request, "form_buat_ujian_kualifikasi.html")
+def list_ujian_kualifikasi_umpire(request):
+    return render(request, "list_ujian_kualifikasi_umpire.html")

@@ -1,0 +1,53 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block meta %}
+<title>BaBaDu | PELATIH </title>
+
+{% endblock meta %}
+
+{% block content %}
+
+<main>
+    <!-- Pills navs -->
+    <div class="my-5 d-flex justify-content-center align-items-center">
+        <div class="container-xl p-5 shadow-sm border rounded-5 border-primary grad">
+            <h1 class="text-center mb-4 text-primary">List Ujian Kualifikasi</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Tahun</th>
+                        <th scope="col">Batch</th>
+                        <th scope="col">Tempat Pelaksanaan</th>
+                        <th scope="col">Tanggal Pelaksanaan</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr>
+                        <th scope="row">2023</th>
+                        <td>1</td>
+                        <td>GBK</td>
+                        <td>2 April 2023</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2022</th>
+                        <td>2</td>
+                        <td>Plaza Senayan</td>
+                        <td>2 April 2023</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+</main>
+
+<style>
+    .table {
+        --bs-table-striped-bg: #f2f9f8;
+
+    }
+</style>
+{% endblock content %}

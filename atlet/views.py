@@ -24,3 +24,6 @@ def dashboard_atlet(request):
 
 def enrolled_event(request):
     return render(request, "enrolled_event.html")
+
+def list_ujian_kualifikasi(request):
+    return render(request, "list_ujian_kualifikasi.html")

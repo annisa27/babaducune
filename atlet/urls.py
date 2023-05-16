@@ -1,5 +1,5 @@
 from django.urls import path
-from atlet.views import daftar_sponsor, form_tes_kualifikasi, tes_kualifikasi, daftar_event, detail_stadium, detail_event, dashboard_atlet, enrolled_event
+from atlet.views import daftar_sponsor, form_tes_kualifikasi, tes_kualifikasi, daftar_event, detail_stadium, detail_event, dashboard_atlet, enrolled_event, list_ujian_kualifikasi
 
 app_name = 'atlet'
 
@@ -12,5 +12,5 @@ urlpatterns = [
     path('daftar-event/stadium/event/', detail_stadium, name='detail_stadium' ),
     path('daftar-event/stadium/event/kategori', detail_event, name='detail_event' ),
     path('enrolled-event/', enrolled_event, name='enrolled_event' ),
-    
+    path('list-ujian-kualifikasi/', list_ujian_kualifikasi, name='list_ujian_kualifikasi' ),
 ]
