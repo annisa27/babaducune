@@ -1,0 +1,59 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block meta %}
+<title>BaBaDu | ATLET </title>
+
+{% endblock meta %}
+
+{% block content %}
+
+<main>
+    <!-- P<main>
+    <!-- Pills navs -->
+
+    <div class="d-flex my-5 mx-auto justify-content-center align-items-center">
+        <div class="col-md-4 p-5 shadow-sm border rounded-5 border-primary">
+            <h1 class="text-center mb-4 text-primary">Form Buat Ujian Kualifikasi</h1>
+
+            <form>
+                <div class="mb-3">
+                    <label for="inputTahun" class="form-label">Tahun</label>
+                    <input type="text" class="form-control border border-primary" id="inputTahun">
+                </div>
+                <div class="mb-3">
+                    <label for="inputBatch" class="form-label">Batch</label>
+                    <input type="text" class="form-control border border-primary" id="inputBatch">
+                </div>
+                <div class="mb-3">
+                    <label for="inputTempatPelaksanaan" class="form-label">Tempat Pelaksanaan</label>
+                    <input type="text" class="form-control border border-primary" id="inputTempatPelaksanaan">
+                </div>
+                <div class="mb-3">
+                    <label for="inputTglPelaksanaan" class="form-label">Tanggal Pelaksanaan</label>
+                    <input type="date" class="form-control border border-primary" id="inputTglPelaksanaan" required>
+                </div>
+
+                <div class="d-grid mt-5">
+                    <button class="btn btn-primary" type="submit"><a href="{% url 'umpire:list_ujian_kualifikasi_umpire' %}">Buat</a></button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- Pills content -->
+</main>
+
+
+<style>
+
+
+</style>
+
+
+<!-- Pills navs -->
+
+<!-- Pills content -->
+<!-- </main> -->
+{% endblock content %}
