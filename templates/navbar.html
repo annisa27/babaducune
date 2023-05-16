@@ -1,8 +1,8 @@
 <!-- NAVBAR NONAUTH -->
 <nav class="navbar navbar-expand-lg  navbar-light">
     <div class="container px-3">
-        <img src="https://cdn.discordapp.com/attachments/814499566245249047/1103213844890927155/Screenshot_2023-05-03_at_13.57.41.png" height="60" width="150" alt="test" loading="lazy"
-              style="margin-top: 2px;" />
+        <img src="https://cdn.discordapp.com/attachments/814499566245249047/1103213844890927155/Screenshot_2023-05-03_at_13.57.41.png"
+            height="60" width="150" alt="test" loading="lazy" style="margin-top: 2px;" />
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07"
             aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -10,10 +10,10 @@
     </div>
 </nav>
 <!-- NAVBAR ATLET -->
-<!-- <nav class="navbar navbar-expand-lg  navbar-light">
+<nav class="navbar navbar-expand-lg  navbar-light">
     <div class="container px-3">
-        <img src="https://cdn.discordapp.com/attachments/814499566245249047/1103213844890927155/Screenshot_2023-05-03_at_13.57.41.png" height="60" width="150" alt="test" loading="lazy"
-              style="margin-top: 2px;" />
+        <img src="https://cdn.discordapp.com/attachments/814499566245249047/1103213844890927155/Screenshot_2023-05-03_at_13.57.41.png"
+            height="60" width="150" alt="test" loading="lazy" style="margin-top: 2px;" />
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07"
             aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -22,20 +22,41 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarsExample07">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'atlet:dashboard_atlet' %}">Dashboard <span class="sr-only"></span></a>
+                    <a class="nav-link" href="{% url 'atlet:dashboard_atlet' %}">Dashboard <span
+                            class="sr-only"></span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'atlet:form_tes_kualifikasi' %}">Tes Kualifikasi</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Ujian Kualifikasi
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'atlet:form_tes_kualifikasi' %}">List Ujian
+                                Kualifikasi</a></li>
+                        <li><a class="dropdown-item" href="#">Riwayat Ujian Kualifikasi</a></li>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="{% url 'atlet:daftar_event' %}">Daftar Event</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Event
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'atlet:daftar_event' %}">Daftar Event</a></li>
+                        <li><a class="dropdown-item" href="{% url 'atlet:enrolled_event' %}">Enrolled Event</a></li>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="{% url 'atlet:enrolled_event' %}">Enrolled Event</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Sponsor
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'atlet:daftar_sponsor' %}">Daftar Sponsor</a></li>
+                        <li><a class="dropdown-item" href="#">Enrolled Event</a></li>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="{% url 'atlet:daftar_sponsor' %}">Daftar Sponsor</a>
-                </li>
+
             </ul>
 
         </div>
@@ -43,10 +64,10 @@
             <a class="btn btn-danger btn-logout">Logout</a>
         </span>
     </div>
-</nav> -->
+</nav>
 
 <!-- NAVBAR PELATIH -->
-<!-- <nav class="navbar navbar-expand-lg  navbar-light">
+<nav class="navbar navbar-expand-lg  navbar-light">
     <div class="container px-3">
         <img src="https://cdn.discordapp.com/attachments/814499566245249047/1103213844890927155/Screenshot_2023-05-03_at_13.57.41.png" height="60" width="150" alt="test" loading="lazy"
               style="margin-top: 2px;" />
@@ -60,11 +81,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'pelatih:dashboard_pelatih' %}">Dashboard <span class="sr-only"></span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'pelatih:daftar_atlet' %}">Daftar Atlet</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="{% url 'pelatih:lihat_atlet' %}">List Atlet</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Latih Atlet
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'pelatih:daftar_atlet' %}">Create Latih Atlet</a></li>
+                        <li><a class="dropdown-item" href="{% url 'pelatih:lihat_atlet' %}">List Atlet Dilatih</a></li>
+                    </ul>
                 </li>
             </ul>
 
@@ -73,10 +98,10 @@
             <a class="btn btn-danger btn-logout">Logout</a>
         </span>
     </div>
-</nav> -->
+</nav>
 
 <!-- NAVBAR UMPIRE -->
-<!-- <nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar navbar-expand-lg navbar-light">
     <div class="container px-3">
         <img src="https://cdn.discordapp.com/attachments/814499566245249047/1103213844890927155/Screenshot_2023-05-03_at_13.57.41.png" height="60" width="150" alt="test" loading="lazy"
               style="margin-top: 2px;" />
@@ -90,11 +115,34 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'umpire:dashboard_umpire' %}">Dashboard <span class="sr-only"></span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="{% url 'umpire:list_event' %}">Lihat Event</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Atlet
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'pelatih:daftar_atlet' %}">Daftar Atlet</a></li>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="{% url 'umpire:hasil_pertandingan' %}">Hasil Pertandingan</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Ujian Kualifikasi
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Buat Ujian Kualifikasi</a></li>
+                        <li><a class="dropdown-item" href="#">List Ujian Kualifikasi</a></li>
+                        <li><a class="dropdown-item" href="#">Riwayat Ujian Kualifikasi</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Event
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'umpire:list_event' %}">List Partai Kompetisi</a></li>
+                    </ul>
                 </li>
             </ul>
 
@@ -103,7 +151,7 @@
             <a class="btn btn-danger btn-logout">Logout</a>
         </span>
     </div>
-</nav> -->
+</nav>
 <hr class="hr my-0" style="height: 10px; color: black;" />
 
 <style>
@@ -120,7 +168,7 @@
     .btn-logout:hover {
         background-color: #dc3545;
         color: white;
-        
+
     }
 
     .navbar-nav>.active>a {
