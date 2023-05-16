@@ -1,4 +1,5 @@
 <!-- NAVBAR NONAUTH -->
+{% if request.session.nonauth %}
 <nav class="navbar navbar-expand-lg  navbar-light">
     <div class="container px-3">
         <img src="https://cdn.discordapp.com/attachments/814499566245249047/1103213844890927155/Screenshot_2023-05-03_at_13.57.41.png"
@@ -9,7 +10,9 @@
         </button>
     </div>
 </nav>
+{% endif %}
 <!-- NAVBAR ATLET -->
+{% if request.session.is_atlet %}
 <nav class="navbar navbar-expand-lg  navbar-light">
     <div class="container px-3">
         <img src="https://cdn.discordapp.com/attachments/814499566245249047/1103213844890927155/Screenshot_2023-05-03_at_13.57.41.png"
@@ -61,12 +64,13 @@
 
         </div>
         <span class="navbar-text">
-            <a class="btn btn-danger btn-logout">Logout</a>
+            <a class="btn btn-danger btn-logout"  href="{% url 'authentication:logout' %}">Logout</a>
         </span>
     </div>
 </nav>
-
+{% endif %}
 <!-- NAVBAR PELATIH -->
+{% if request.session.is_pelatih %}
 <nav class="navbar navbar-expand-lg  navbar-light">
     <div class="container px-3">
         <img src="https://cdn.discordapp.com/attachments/814499566245249047/1103213844890927155/Screenshot_2023-05-03_at_13.57.41.png" height="60" width="150" alt="test" loading="lazy"
@@ -95,12 +99,13 @@
 
         </div>
         <span class="navbar-text">
-            <a class="btn btn-danger btn-logout">Logout</a>
+            <a class="btn btn-danger btn-logout" href="{% url 'authentication:logout' %}">Logout</a>
         </span>
     </div>
 </nav>
-
+{% endif %}
 <!-- NAVBAR UMPIRE -->
+{% if request.session.is_umpire %}
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container px-3">
         <img src="https://cdn.discordapp.com/attachments/814499566245249047/1103213844890927155/Screenshot_2023-05-03_at_13.57.41.png" height="60" width="150" alt="test" loading="lazy"
@@ -148,10 +153,11 @@
 
         </div>
         <span class="navbar-text">
-            <a class="btn btn-danger btn-logout">Logout</a>
+            <a class="btn btn-danger btn-logout" href="{% url 'authentication:logout' %}">Logout</a>
         </span>
     </div>
 </nav>
+{% endif %}
 <hr class="hr my-0" style="height: 10px; color: black;" />
 
 <style>

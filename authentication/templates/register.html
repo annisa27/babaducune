@@ -26,38 +26,39 @@
                 </div>
 
                 <!-- FORM ATLET -->
-                <form id="form-atlet">
+                <form id="form-atlet" method="POST" action="{% url 'authentication:register' %}">
+                    {%csrf_token%}
                     <div class="mb-3">
                         <label for="inputNama" class="form-label">Nama</label>
-                        <input type="name" class="form-control border border-primary" id="inputNama"
+                        <input type="name" class="form-control border border-primary" name="nama" id="nama"
                             aria-describedby="emailHelp" required>
                     </div>
                     <div class="mb-3">
                         <label for="inputEmail" class="form-label">Email</label>
-                        <input type="email" class="form-control border border-primary" id="inputEmail" required>
+                        <input type="email" class="form-control border border-primary" id="email" name="email" required>
                     </div>
                     <div class="mb-3">
                         <label for="inputNegara" class="form-label">Negara</label>
-                        <input class="form-control border border-primary" id="inputNegara" required>
+                        <input class="form-control border border-primary" id="negara" name="negara_asal" required>
                     </div>
                     <div class="mb-3">
                         <label for="inputTTL" class="form-label">Tanggal Lahir</label>
-                        <input type="date" class="form-control border border-primary" id="inputTTL" required>
+                        <input type="date" class="form-control border border-primary" id="tgl_lahir" name="tgl_lahir" required>
                     </div>
                     <div class="mb-3">
                         <p class="form-label">Play</p>
                         <div class="row">
                             <div class="col">
                                 <input class="form-check-input border border-primary" type="radio"
-                                    name="flexRadioDefault" id="flexRadioDefault1" required>
-                                <label class="form-check-label" for="flexRadioDefault1">
+                                    name="play_right" id="playRightRadio" value="True" required>
+                                <label class="form-check-label" for="playRadioButton">
                                     Right
                                 </label>
                             </div>
                             <div class="col">
                                 <input class="form-check-input border border-primary" type="radio"
-                                    name="flexRadioDefault" id="flexRadioDefault1" required>
-                                <label class="form-check-label" for="flexRadioDefault1">
+                                    name="play_right" id="playLeftRadio" value="False" required>
+                                <label class="form-check-label" for="flexRadioDplayRadioButtonefault1">
                                     Left
                                 </label>
                             </div>
@@ -66,34 +67,35 @@
                     </div>
                     <div class="mb-3">
                         <label for="inputTinggi" class="form-label">Tinggi Badan</label>
-                        <input type="number" class="form-control border border-primary" id="inputTinggi" required>
+                        <input type="number" class="form-control border border-primary" id="height" name="height" required>
                     </div>
                     <div class="mb-3">
                         <p class="form-label">Jenis Kelamin</p>
 
                         <select class="form-control border border-primary form-select"
-                            aria-label="Default select example" required>
+                            aria-label="Default select example" id="jenis_kelamin" name="jenis_kelamin" required>
                             <option selected>Pilih</option>
-                            <option value="1">Laki-laki</option>
-                            <option value="2">Perempuan</option>
+                            <option value="True">Laki-laki</option>
+                            <option value="False">Perempuan</option>
 
                         </select>
                     </div>
                     <div class="d-grid mt-5">
-                        <button class="btn btn-primary" type="submit">Daftar</button>
+                        <button class="btn btn-primary" type="submit" name="submitAtlet">Daftar</button>
                     </div>
                 </form>
 
                 <!-- FORM PELATIH -->
-                <form id="form-pelatih">
+                <form id="form-pelatih" method="POST" action="{% url 'authentication:register' %}">
+                {%csrf_token%}
                     <div class="mb-3">
                         <label for="inputNama" class="form-label">Nama</label>
-                        <input type="name" class="form-control border border-primary" id="inputNama"
+                        <input type="name" class="form-control border border-primary" id="nama" name="nama"
                             aria-describedby="emailHelp" required>
                     </div>
                     <div class="mb-3">
                         <label for="inputEmail" class="form-label">Email</label>
-                        <input type="email" class="form-control border border-primary" id="inputEmail" required>
+                        <input type="email" class="form-control border border-primary" id="email" name="email" required>
                     </div>
                     <div class="mb-3">
                         <p class="form-label">Kategori</p>
@@ -101,19 +103,19 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-check">
-                                        <input class="form-check-input border border-primary" type="checkbox" value=""
-                                            id="flexCheckDefault" required>
-                                        <label class="form-check-label" for="flexCheckDefault">
-                                            Tunggal putra
+                                        <input class="form-check-input border border-primary" type="checkbox" value="Tunggal Putra"
+                                            id="spesialisasi" name="spesialisasi">
+                                        <label class="form-check-label" for="spesialisasi">
+                                            Tunggal Putra
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-check">
-                                        <input class="form-check-input border border-primary" type="checkbox" value=""
-                                            id="flexCheckDefault" required>
-                                        <label class="form-check-label" for="flexCheckDefault">
-                                            Tunggal putri
+                                        <input class="form-check-input border border-primary" type="checkbox" value="Tunggal Putri"
+                                            id="spesialisasi" name="spesialisasi">
+                                        <label class="form-check-label" for="spesialisasi">
+                                            Tunggal Putri
                                         </label>
                                     </div>
                                 </div>
@@ -121,19 +123,30 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-check">
-                                        <input class="form-check-input border border-primary" type="checkbox" value=""
-                                            id="flexCheckDefault" required>
-                                        <label class="form-check-label" for="flexCheckDefault">
+                                        <input class="form-check-input border border-primary" type="checkbox" value="Ganda Putra"
+                                            id="spesialisasi" name="spesialisasi">
+                                        <label class="form-check-label" for="spesialisasi">
                                             Ganda Putra
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-check">
-                                        <input class="form-check-input border border-primary" type="checkbox" value=""
-                                            id="flexCheckDefault" required>
-                                        <label class="form-check-label" for="flexCheckDefault">
+                                        <input class="form-check-input border border-primary" type="checkbox" value="Ganda Putri"
+                                            id="spesialisasi" name="spesialisasi">
+                                        <label class="form-check-label" for="spesialisasi">
                                             Ganda Putri
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input border border-primary" type="checkbox" value="Ganda Campuran"
+                                            id="spesialisasi" name="spesialisasi">
+                                        <label class="form-check-label" for="spesialisasi">
+                                            Ganda Campuran
                                         </label>
                                     </div>
                                 </div>
@@ -143,30 +156,31 @@
                     </div>
                     <div class="mb-3">
                         <label for="inputTglMulai" class="form-label">Tanggal Mulai</label>
-                        <input type="date" class="form-control border border-primary" id="inputTglMulai" required>
+                        <input type="date" class="form-control border border-primary" id="tanggal_mulai" name="tanggal_mulai" required>
                     </div>
                     <div class="d-grid mt-5">
-                        <button class="btn btn-primary" type="submit">Daftar</button>
+                        <button class="btn btn-primary" type="submit" name="submitPelatih">Daftar</button>
                     </div>
                 </form>
 
                 <!-- FORM UMPIRE -->
-                <form id="form-umpire">
+                <form id="form-umpire" method="POST" action="{% url 'authentication:register' %}">
+                {%csrf_token%}
                     <div class="mb-3">
                         <label for="inputNama" class="form-label">Nama</label>
-                        <input type="name" class="form-control border border-primary" id="inputNama"
+                        <input type="name" class="form-control border border-primary" id="nama" name="nama"
                             aria-describedby="emailHelp" required>
                     </div>
                     <div class="mb-3">
                         <label for="inputEmail" class="form-label">Email</label>
-                        <input type="email" class="form-control border border-primary" id="inputEmail" required>
+                        <input type="email" class="form-control border border-primary" id="email" name="email" required>
                     </div>
                     <div class="mb-3">
                         <label for="inputNegara" class="form-label">Negara</label>
-                        <input class="form-control border border-primary" id="inputNegara" required>
+                        <input class="form-control border border-primary" id="negara" name="negara" required>
                     </div>
                     <div class="d-grid mt-5">
-                        <button class="btn btn-primary" type="submit">Daftar</button>
+                        <button class="btn btn-primary" type="submit" name="submitUmpire">Daftar</button>
                     </div>
                 </form>
             </div>
