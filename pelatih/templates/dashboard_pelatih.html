@@ -19,15 +19,15 @@
             <tbody>
               <tr>
                 <th scope="col">Nama</th>
-                <td>Wayne Rooney</td>
+                <td>{{request.session.nama}}</td>
                 <th scope="col">Spesialisasi Kategori</th>
-                <td>Tunggal Campuran</td>
+                <td>{{ spesialisasi }}</td>
               </tr>
               <tr>
                 <th scope="col">Tanggal Mulai</th>
-                <td>15-04-2020</td>
+                <td>{{ request.session.tanggal_mulai }}</td>
                 <th scope="col">Email</th>
-                <td>wrooney@gmail.com</td>
+                <td>{{request.session.email}}</td>
               </tr>
             </tbody>
           </table>
