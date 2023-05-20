@@ -41,6 +41,7 @@ def sql_insert_atlet(id, tgl_lahir, negara_asal, play_right, height, jenis_kelam
                 Negara_Asal,
                 Play_Right,
                 Height,
+                World_Rank,
                 Jenis_Kelamin
             )
         VALUES
@@ -50,6 +51,7 @@ def sql_insert_atlet(id, tgl_lahir, negara_asal, play_right, height, jenis_kelam
                 '{negara_asal}',
                 {play_right},
                 {height},
+                0,
                 {jenis_kelamin}
             );
         """
