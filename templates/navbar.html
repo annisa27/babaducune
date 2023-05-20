@@ -39,6 +39,7 @@
                         <li><a class="dropdown-item" href="#">Riwayat Ujian Kualifikasi</a></li>
                     </ul>
                 </li>
+                {% if request.session.is_atlet and status_kualifikasi == 'Qualified' %}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
@@ -56,9 +57,10 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{% url 'atlet:daftar_sponsor' %}">Daftar Sponsor</a></li>
-                        <li><a class="dropdown-item" href="#">Enrolled Event</a></li>
+                        <li><a class="dropdown-item" href="#">List Sponsor</a></li>
                     </ul>
                 </li>
+                {% endif %}
 
             </ul>
 
