@@ -50,6 +50,8 @@ def dashboard_atlet(request):
 
         for attribute in data:
             context[attribute] = data[attribute]
+        if context['status_kualifikasi'] == 'Qualified':
+            request.session['is_qualified'] = True
         
         #GET TOTAL POINT
         query = sql_get_total_point(request.session['id'])

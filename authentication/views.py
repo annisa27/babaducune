@@ -122,7 +122,6 @@ def show_login(request):
         cursor.execute("SET SEARCH_PATH TO BABADU;")
         cursor.execute(query_user) 
         data = parse(cursor)
-        print(len(data))
         request.session['is_atlet'] = False
         request.session['is_pelatih'] = False
         request.session['is_umpire'] = False
@@ -142,6 +141,7 @@ def show_login(request):
             tipe = member['tipe_member']
             if tipe == 'atlet':
                 request.session['is_atlet'] = True
+                request.session['is_qualified'] = False
                 return redirect('atlet:dashboard_atlet')    
             elif tipe == 'pelatih':
                 request.session['is_pelatih'] = True
