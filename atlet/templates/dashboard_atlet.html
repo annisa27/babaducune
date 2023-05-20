@@ -20,37 +20,61 @@
             <tbody>
               <tr>
                 <th scope="col">Nama Lengkap</th>
-                <td>Ujang Kusnadi</td>
+                <td>{{ request.session.nama }}</td>
                 <th scope="col">Tinggi Badan</th>
-                <td>174 cm</td>
+                <td>{{ request.session.height }} cm</td>
               </tr>
               <tr>
                 <th scope="col">Negara</th>
-                <td>Wakanda</td>
+                <td>{{ request.session.negara_asal }}</td>
                 <th scope="col">Jenis Kelamin</th>
-                <td>Laki-laki</td>
+                <td> 
+                  {% if request.session.jenis_kelamin %}
+                  Putra
+                  {% else %}
+                  Putri
+                  {% endif %} 
+                </td>
               </tr>
               <tr>
                 <th scope="col">Email</th>
-                <td>ultraman@gmail.com</td>
+                <td>{{ request.session.email }}</td>
                 <th scope="col">Pelatih</th>
-                <td>-</td>
+                <td>{{ pelatih }}</td>
               </tr>
               <tr>
                 <th scope="col">Tanggal Lahir</th>
-                <td>15-04-20233</td>
+                <td>{{ request.session.tgl_lahir }}</td>
                 <th scope="col">Status</th>
-                <td>Not Qualified</td>
+                <td>{{ status_kualifikasi }}</td>
               </tr>
               <tr>
                 <th scope="col">Play</th>
-                <td>Right Hand</td>
+                <td>
+                  {% if request.session.play_right %}
+                  Right Hand
+                  {% else %}
+                  Left Hand
+                  {% endif %}  
+                </td>
                 <th scope="col">World Rank</th>
-                <td>-</td>
+                <td>
+                  {% if status_kualifikasi == 'Qualified' %}
+                  {{ request.session.world_rank }}
+                  {% else %}
+                  -
+                  {% endif %}
+                </td>
               </tr>
               <tr>
                 <th scope="col">Total Poin</th>
-                <td>0</td>
+                <td>
+                  {% if status_kualifikasi == 'Qualified' %}
+                  {{  total_point }}
+                  {% else %}
+                  0
+                  {% endif %}
+                </td>
               </tr>
             </tbody>
           </table>
