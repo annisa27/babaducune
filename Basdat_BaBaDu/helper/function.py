@@ -14,13 +14,3 @@ def slug_to_title(slug):
 def format_rupiah(amount):
     rupiah = "Rp {:,}".format(amount).replace(',', '.')
     return rupiah
-
-from datetime import datetime
-
-def parse_year(date_string):
-    try:
-        date_object = datetime.strptime(date_string, "%B %d, %Y")
-        year = date_object.year
-        return year
-    except ValueError:
-        return None
