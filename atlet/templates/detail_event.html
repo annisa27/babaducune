@@ -55,39 +55,37 @@
               <tr>
                 <th scope="col">Kategori</th>
                 <th scope="col">Partner</th>
+                <th scope="col">Kapasitas</th>
                 <th scope="col"> </th>
               </tr>
             </thead>
             <tbody class="table-group-divider">
-              <tr >
-                <td>Tunggal Putra</td>
-                <td>-</td>
-                <td><button class="btn btn-primary" type="submit"><a href="{% url 'atlet:enrolled_event' %}">Join</a></button></td>
-              </tr>
-              <tr>
-                <td>Ganda Putra</td>
-                <td>
-                  <select class="form-select w-50" aria-label="Default select example" required>
-                    <option selected>Pilih Atlet</option>
-                    <option value="1">Atlet 1</option>
-                    <option value="2">Atlet 2</option>
-                    <option value="3">Atlet 3</option>
-                  </select>
-                </td>
-                <td><button class="btn btn-primary" type="submit"><a href="{% url 'atlet:enrolled_event' %}">Join</a></button></td>
-              </tr>
-              <tr>
-                <td>Ganda Campuran</td>
-                <td>
-                  <select class="form-select w-50" aria-label="Default select example" required>
-                    <option selected>Pilih Atlet</option>
-                    <option value="1">Atlet 1</option>
-                    <option value="2">Atlet 2</option>
-                    <option value="3">Atlet 3</option>
-                  </select>
-                </td>
-                <td><button class="btn btn-primary" type="submit"><a href="{% url 'atlet:enrolled_event' %}">Join</a></button></td>
-              </tr>
+              {% if jenis_partai %}
+              {% for partai in jenis_partai %}
+                {% if partai.jenis_partai == 'Tunggal Putra' or partai.jenis_partai == 'Tunggal Putri' %}
+                  <tr>
+                    <td>{{ partai.jenis_partai }}</td>
+                    <td>-</td>
+                    <td>x/{{ kapasitas }}</td>
+                    <td><button class="btn btn-primary" type="submit"><a href="{% url 'atlet:enrolled_event' %}">Join</a></button></td>
+                  </tr>
+                {% else %}
+                  <tr>
+                    <td>{{ partai.jenis_partai }}</td>
+                    <td></td>
+                    <td>x/{{ kapasitas }}</td>
+                    <!-- <select class="form-select w-50" aria-label="Default select example" required>
+                      <option selected>Pilih Atlet</option>
+                      <option value="1">Atlet 1</option>
+                      <option value="2">Atlet 2</option>
+                      <option value="3">Atlet 3</option>
+                    </select> -->
+                    <td><button class="btn btn-primary" type="submit"><a href="{% url 'atlet:enrolled_event' %}">Join</a></button></td>
+                  </tr>
+                {% endif %}
+              {% endfor %}
+              {% endif %}
+
             </tbody>
           </table>
         </div>

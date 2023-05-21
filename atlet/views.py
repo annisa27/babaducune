@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from Basdat_BaBaDu.helper.function import parse
+from Basdat_BaBaDu.helper.function import *
 from django.shortcuts import render, redirect
 from django.db import connection
 from atlet.query import *
@@ -15,13 +15,78 @@ def tes_kualifikasi(request):
     return render(request, "tes_kualifikasi.html")
 
 def daftar_event(request):
-    return render(request, "daftar_event.html")
+    context = {}
+    cursor = connection.cursor()
+    cursor.execute("SET SEARCH_PATH TO BABADU;")
 
-def detail_stadium(request):
-    return render(request, "detail_stadium.html")
+    #GET DAFTAR EVENT
+    query = sql_get_daftar_event()
+    cursor.execute(query)
+    data = parse(cursor)
+    daftar_stadium = []
+    for stadium in data:
+        stadium['slug'] = title_to_slug(stadium['nama'])
+        daftar_stadium.append(stadium)
 
-def detail_event(request):
-    return render(request, "detail_event.html")
+    context['data_stadium'] = daftar_stadium
+
+    return render(request, "daftar_event.html", context)
+
+
+def detail_stadium(request, stadium):
+    context = {}
+    cursor = connection.cursor()
+    cursor.execute("SET SEARCH_PATH TO BABADU;")
+
+    #GET DETAIL STADIUM
+    query = sql_get_detail_stadium(slug_to_title(stadium))
+    cursor.execute(query)
+    data = parse(cursor)
+    daftar_event = []
+    for event in data:
+        event['total_hadiah'] = format_rupiah(event['total_hadiah'])
+        event['slug'] = title_to_slug(event['nama_event'])
+        daftar_event.append(event)
+
+    context['daftar_event'] = daftar_event
+    return render(request, "detail_stadium.html", context)
+
+def detail_event(request, stadium, event):
+    context = {}
+    cursor = connection.cursor()
+    cursor.execute("SET SEARCH_PATH TO BABADU;")
+
+    #GET DETAIL EVENT
+    query = sql_get_detail_event(slug_to_title(event))
+    cursor.execute(query)
+    data = parse(cursor)[0]
+
+    for attribute in data:
+        context[attribute] = data[attribute]
+    context['total_hadiah'] = format_rupiah(context['total_hadiah'])
+
+    #GET PARTAI KOMPETISI
+    query = sql_get_partai_kompetisi(slug_to_title(event),context['tgl_mulai'].year )
+    cursor.execute(query)
+    data = parse(cursor)
+
+    daftar_partai = []
+    jenis_kelamin = 'Putra' if request.session['jenis_kelamin'] else 'Putri'
+    for partai in data:
+        if jenis_kelamin == 'Putra':
+            if partai['jenis_partai'] == 'Ganda Putri' or partai['jenis_partai']  == 'Tunggal Putri':
+                continue
+        else:
+            if partai['jenis_partai']  == 'Ganda Putra' or partai['jenis_partai']  == 'Tunggal Putra':
+                continue
+        daftar_partai.append(partai)
+    context['jenis_partai'] = daftar_partai
+
+    #GET PARTNER ATLET
+    query = sql_get_partner(jenis_kelamin)
+    cursor.execute(query)
+    data = parse(cursor)
+    return render(request, "detail_event.html", context)
 
 def dashboard_atlet(request):
     if "id" not in request.session:
